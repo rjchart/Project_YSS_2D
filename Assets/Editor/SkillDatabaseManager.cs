@@ -1,0 +1,74 @@
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
+
+public class SkillDatabaseManager : EditorWindow {
+
+	[MenuItem("RPG Tutorial Tools/Skill Database Manager")]
+	static void Init() {
+
+		SkillDatabaseManager window = (SkillDatabaseManager)EditorWindow.CreateInstance(typeof(SkillDatabaseManager));
+		window.Show();
+	}
+
+	public enum SkillTypeToCreate
+	{
+		DefaultSkill,
+		SwordSkill
+	}
+
+	public SkillTypeToCreate currentSkillTypeToCreate = SkillTypeToCreate.DefaultSkill;
+
+	string newSkillName = "";
+	string newSkillDescription = "";
+	int newSkillCost = 0;
+
+	public SkillManager skillManager;
+
+	void OnGUI()
+	{
+
+		skillManager = EditorGUILayout.ObjectField(skillManager, typeof(SkillManager)) as SkillManager;
+		if (skillManager != null)
+		{
+			currentSkillTypeToCreate = (SkillTypeToCreate)EditorGUILayout.EnumPopup(currentSkillTypeToCreate); 
+
+			newSkillName = EditorGUILayout.TextField("Skill Name: ", newSkillName);
+			newSkillDescription = EditorGUILayout.TextField("Description: ", newSkillDescription);
+			newSkillCost = EditorGUILayout.IntField("Cost: ", newSkillCost);
+			switch(currentSkillTypeToCreate)
+			{
+				case SkillTypeToCreate.DefaultSkill:
+					break;
+
+				case SkillTypeToCreate.SwordSkill:
+					break;
+						
+			}
+
+			if (GUILayout.Button("Add New Skill"))
+			{
+				switch(currentSkillTypeToCreate)
+				{
+					case SkillTypeToCreate.DefaultSkill:
+						DefaultSkill newDefaultSkill = (DefaultSkill)ScriptableObject.CreateInstance<DefaultSkill>();
+						newDefaultSkill.skillName = newSkillName;
+						newDefaultSkill.description = newSkillDescription;
+						newDefaultSkill.cost = newSkillCost;
+						skillManager.skillList.Add(newDefaultSkill);
+						break;
+
+					case SkillTypeToCreate.SwordSkill:
+						SwordSkill newSwordSkill = (SwordSkill)ScriptableObject.CreateInstance<SwordSkill>();
+						newSwordSkill.skillName = newSkillName;
+						newSwordSkill.description = newSkillDescription;
+						newSwordSkill.cost = newSkillCost;
+						skillManager.skillList.Add(newSwordSkill);
+						break;
+
+							
+				}
+			}
+		}
+	}
+}

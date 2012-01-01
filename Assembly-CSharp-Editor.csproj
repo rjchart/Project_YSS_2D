@@ -48,6 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Behavior Designer\Editor\BehaviorTreeInspector.cs" />
      <Compile Include="Assets\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
+     <Compile Include="Assets\Editor\ItemDatabaseManager.cs" />
+     <Compile Include="Assets\Editor\ItemManagerInspector.cs" />
+     <Compile Include="Assets\Editor\SkillDatabaseManager.cs" />
+     <Compile Include="Assets\Editor\SkillManagerInspector.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraAnchorEditor.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraEditor.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Editor\Fonts\tk2dFontBuilder.cs" />
