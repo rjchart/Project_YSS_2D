@@ -57,6 +57,7 @@ public class ItemDatabaseManager : EditorWindow {
 					break;
 
 				case ItemTypeToCreate.KeyItem:
+					//확인 사항 체크
 					break;
 						
 			}
