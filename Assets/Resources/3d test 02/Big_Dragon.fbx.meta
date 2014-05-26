@@ -1,0 +1,649 @@
+fileFormatVersion: 2
+guid: b040942fab0894b5e8be14b587503ac8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: _____________________
+    100002: b_MF_Armor_Crotch
+    100004: b_MF_Armor_Sho_L
+    100006: b_MF_Armor_Sho_R
+    100008: b_MF_Armroll_L
+    100010: b_MF_Armroll_R
+    100012: b_MF_Calf_L
+    100014: b_MF_Calf_R
+    100016: b_MF_Clavicle_L
+    100018: b_MF_Clavicle_R
+    100020: b_MF_Face
+    100022: b_MF_Finger_01_L
+    100024: b_MF_Finger_01_R
+    100026: b_MF_Finger_02_L
+    100028: b_MF_Finger_02_R
+    100030: b_MF_Finger_03_L
+    100032: b_MF_Finger_03_R
+    100034: b_MF_Finger_04_L
+    100036: b_MF_Finger_04_R
+    100038: b_MF_Finger_05_L
+    100040: b_MF_Finger_05_R
+    100042: b_MF_Finger_06_L
+    100044: b_MF_Finger_06_R
+    100046: b_MF_Finger_07_L
+    100048: b_MF_Finger_07_R
+    100050: b_MF_Finger_08_L
+    100052: b_MF_Finger_08_R
+    100054: b_MF_Finger_09_L
+    100056: b_MF_Finger_09_R
+    100058: b_MF_Finger_10_L
+    100060: b_MF_Finger_10_R
+    100062: b_MF_Finger_11_L
+    100064: b_MF_Finger_11_R
+    100066: b_MF_Finger_12_L
+    100068: b_MF_Finger_12_R
+    100070: b_MF_Foot_L
+    100072: b_MF_Foot_R
+    100074: b_MF_Forearm_L
+    100076: b_MF_Forearm_R
+    100078: b_MF_ForeTwist2_L
+    100080: b_MF_ForeTwist2_R
+    100082: b_MF_Hand_L
+    100084: b_MF_Hand_R
+    100086: b_MF_Head
+    100088: b_MF_Jaw
+    100090: b_MF_Neck
+    100092: b_MF_Neck_02
+    100094: b_MF_Neck_03
+    100096: b_MF_Pelvis
+    100098: b_MF_Spine_01
+    100100: b_MF_Spine_02
+    100102: b_MF_Spine_03
+    100104: b_MF_Tail_01
+    100106: b_MF_Tail_02
+    100108: b_MF_Tail_03
+    100110: b_MF_Tail_04
+    100112: b_MF_Thigh_L
+    100114: b_MF_Thigh_R
+    100116: b_MF_Thumb_01_L
+    100118: b_MF_Thumb_01_R
+    100120: b_MF_Thumb_02_L
+    100122: b_MF_Thumb_02_R
+    100124: b_MF_Thumb_03_L
+    100126: b_MF_Thumb_03_R
+    100128: b_MF_Toe_01_L
+    100130: b_MF_Toe_01_R
+    100132: b_MF_Toe_02_L
+    100134: b_MF_Toe_02_R
+    100136: b_MF_Toe_03_L
+    100138: b_MF_Toe_03_R
+    100140: b_MF_Toe_04_L
+    100142: b_MF_Toe_04_R
+    100144: b_MF_Toe_05_L
+    100146: b_MF_Toe_05_R
+    100148: b_MF_Toe_06_L
+    100150: b_MF_Toe_06_R
+    100152: b_MF_Toe_L
+    100154: b_MF_Toe_R
+    100156: b_MF_UpperArm_L
+    100158: b_MF_UpperArm_R
+    100160: b_MF_Weapon_L
+    100162: b_MF_Weapon_L_End
+    100164: b_MF_Weapon_R
+    100166: b_MF_Weapon_R_End
+    100168: b_MF_Wing_L
+    100170: b_MF_Wing_R
+    100172: Big_Dragon
+    100174: //RootNode
+    100176: Big_Dragon_2
+    400000: _____________________
+    400002: b_MF_Armor_Crotch
+    400004: b_MF_Armor_Sho_L
+    400006: b_MF_Armor_Sho_R
+    400008: b_MF_Armroll_L
+    400010: b_MF_Armroll_R
+    400012: b_MF_Calf_L
+    400014: b_MF_Calf_R
+    400016: b_MF_Clavicle_L
+    400018: b_MF_Clavicle_R
+    400020: b_MF_Face
+    400022: b_MF_Finger_01_L
+    400024: b_MF_Finger_01_R
+    400026: b_MF_Finger_02_L
+    400028: b_MF_Finger_02_R
+    400030: b_MF_Finger_03_L
+    400032: b_MF_Finger_03_R
+    400034: b_MF_Finger_04_L
+    400036: b_MF_Finger_04_R
+    400038: b_MF_Finger_05_L
+    400040: b_MF_Finger_05_R
+    400042: b_MF_Finger_06_L
+    400044: b_MF_Finger_06_R
+    400046: b_MF_Finger_07_L
+    400048: b_MF_Finger_07_R
+    400050: b_MF_Finger_08_L
+    400052: b_MF_Finger_08_R
+    400054: b_MF_Finger_09_L
+    400056: b_MF_Finger_09_R
+    400058: b_MF_Finger_10_L
+    400060: b_MF_Finger_10_R
+    400062: b_MF_Finger_11_L
+    400064: b_MF_Finger_11_R
+    400066: b_MF_Finger_12_L
+    400068: b_MF_Finger_12_R
+    400070: b_MF_Foot_L
+    400072: b_MF_Foot_R
+    400074: b_MF_Forearm_L
+    400076: b_MF_Forearm_R
+    400078: b_MF_ForeTwist2_L
+    400080: b_MF_ForeTwist2_R
+    400082: b_MF_Hand_L
+    400084: b_MF_Hand_R
+    400086: b_MF_Head
+    400088: b_MF_Jaw
+    400090: b_MF_Neck
+    400092: b_MF_Neck_02
+    400094: b_MF_Neck_03
+    400096: b_MF_Pelvis
+    400098: b_MF_Spine_01
+    400100: b_MF_Spine_02
+    400102: b_MF_Spine_03
+    400104: b_MF_Tail_01
+    400106: b_MF_Tail_02
+    400108: b_MF_Tail_03
+    400110: b_MF_Tail_04
+    400112: b_MF_Thigh_L
+    400114: b_MF_Thigh_R
+    400116: b_MF_Thumb_01_L
+    400118: b_MF_Thumb_01_R
+    400120: b_MF_Thumb_02_L
+    400122: b_MF_Thumb_02_R
+    400124: b_MF_Thumb_03_L
+    400126: b_MF_Thumb_03_R
+    400128: b_MF_Toe_01_L
+    400130: b_MF_Toe_01_R
+    400132: b_MF_Toe_02_L
+    400134: b_MF_Toe_02_R
+    400136: b_MF_Toe_03_L
+    400138: b_MF_Toe_03_R
+    400140: b_MF_Toe_04_L
+    400142: b_MF_Toe_04_R
+    400144: b_MF_Toe_05_L
+    400146: b_MF_Toe_05_R
+    400148: b_MF_Toe_06_L
+    400150: b_MF_Toe_06_R
+    400152: b_MF_Toe_L
+    400154: b_MF_Toe_R
+    400156: b_MF_UpperArm_L
+    400158: b_MF_UpperArm_R
+    400160: b_MF_Weapon_L
+    400162: b_MF_Weapon_L_End
+    400164: b_MF_Weapon_R
+    400166: b_MF_Weapon_R_End
+    400168: b_MF_Wing_L
+    400170: b_MF_Wing_R
+    400172: //RootNode
+    400174: Big_Dragon
+    400176: Big_Dragon_2
+    4300000: Big_Dragon
+    7400000: set-animation
+    7400002: C4D Animation Take
+    9500000: //RootNode
+    13700000: Big_Dragon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: set-animation
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Big_Dragon
+        weight: 1
+      - path: Big_Dragon/_____________________
+        weight: 1
+      - path: Big_Dragon_2
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Armor_Crotch
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_Armor_Sho_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Armroll_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_ForeTwist2_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_01_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_01_L/b_MF_Finger_02_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_01_L/b_MF_Finger_02_L/b_MF_Finger_03_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_04_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_04_L/b_MF_Finger_05_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_04_L/b_MF_Finger_05_L/b_MF_Finger_06_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_07_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_07_L/b_MF_Finger_08_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_07_L/b_MF_Finger_08_L/b_MF_Finger_09_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_10_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_10_L/b_MF_Finger_11_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_10_L/b_MF_Finger_11_L/b_MF_Finger_12_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Thumb_01_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Thumb_01_L/b_MF_Thumb_02_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Thumb_01_L/b_MF_Thumb_02_L/b_MF_Thumb_03_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Weapon_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Weapon_L/b_MF_Weapon_L_End
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_Armor_Sho_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Armroll_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_ForeTwist2_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_01_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_01_R/b_MF_Finger_02_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_01_R/b_MF_Finger_02_R/b_MF_Finger_03_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_04_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_04_R/b_MF_Finger_05_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_04_R/b_MF_Finger_05_R/b_MF_Finger_06_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_07_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_07_R/b_MF_Finger_08_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_07_R/b_MF_Finger_08_R/b_MF_Finger_09_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_10_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_10_R/b_MF_Finger_11_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_10_R/b_MF_Finger_11_R/b_MF_Finger_12_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Thumb_01_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Thumb_01_R/b_MF_Thumb_02_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Thumb_01_R/b_MF_Thumb_02_R/b_MF_Thumb_03_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Weapon_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Weapon_R/b_MF_Weapon_R_End
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03/b_MF_Head
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03/b_MF_Head/b_MF_Face
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03/b_MF_Head/b_MF_Face/b_MF_Jaw
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Wing_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Wing_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01/b_MF_Tail_02
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01/b_MF_Tail_02/b_MF_Tail_03
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01/b_MF_Tail_02/b_MF_Tail_03/b_MF_Tail_04
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_01_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_01_L/b_MF_Toe_02_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_03_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_03_L/b_MF_Toe_04_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_05_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_05_L/b_MF_Toe_06_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_01_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_01_R/b_MF_Toe_02_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_03_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_03_R/b_MF_Toe_04_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_05_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_05_R/b_MF_Toe_06_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C4D Animation Take
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Big_Dragon
+        weight: 1
+      - path: Big_Dragon/_____________________
+        weight: 1
+      - path: Big_Dragon_2
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Armor_Crotch
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_Armor_Sho_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Armroll_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_ForeTwist2_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_01_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_01_L/b_MF_Finger_02_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_01_L/b_MF_Finger_02_L/b_MF_Finger_03_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_04_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_04_L/b_MF_Finger_05_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_04_L/b_MF_Finger_05_L/b_MF_Finger_06_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_07_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_07_L/b_MF_Finger_08_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_07_L/b_MF_Finger_08_L/b_MF_Finger_09_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_10_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_10_L/b_MF_Finger_11_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Finger_10_L/b_MF_Finger_11_L/b_MF_Finger_12_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Thumb_01_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Thumb_01_L/b_MF_Thumb_02_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Thumb_01_L/b_MF_Thumb_02_L/b_MF_Thumb_03_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Weapon_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_L/b_MF_UpperArm_L/b_MF_Forearm_L/b_MF_Hand_L/b_MF_Weapon_L/b_MF_Weapon_L_End
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_Armor_Sho_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Armroll_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_ForeTwist2_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_01_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_01_R/b_MF_Finger_02_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_01_R/b_MF_Finger_02_R/b_MF_Finger_03_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_04_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_04_R/b_MF_Finger_05_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_04_R/b_MF_Finger_05_R/b_MF_Finger_06_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_07_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_07_R/b_MF_Finger_08_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_07_R/b_MF_Finger_08_R/b_MF_Finger_09_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_10_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_10_R/b_MF_Finger_11_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Finger_10_R/b_MF_Finger_11_R/b_MF_Finger_12_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Thumb_01_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Thumb_01_R/b_MF_Thumb_02_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Thumb_01_R/b_MF_Thumb_02_R/b_MF_Thumb_03_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Weapon_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Clavicle_R/b_MF_UpperArm_R/b_MF_Forearm_R/b_MF_Hand_R/b_MF_Weapon_R/b_MF_Weapon_R_End
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03/b_MF_Head
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03/b_MF_Head/b_MF_Face
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Spine_02/b_MF_Spine_03/b_MF_Neck/b_MF_Neck_02/b_MF_Neck_03/b_MF_Head/b_MF_Face/b_MF_Jaw
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Wing_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Spine_01/b_MF_Wing_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01/b_MF_Tail_02
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01/b_MF_Tail_02/b_MF_Tail_03
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Tail_01/b_MF_Tail_02/b_MF_Tail_03/b_MF_Tail_04
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_01_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_01_L/b_MF_Toe_02_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_03_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_03_L/b_MF_Toe_04_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_05_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_L/b_MF_Calf_L/b_MF_Foot_L/b_MF_Toe_L/b_MF_Toe_05_L/b_MF_Toe_06_L
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_01_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_01_R/b_MF_Toe_02_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_03_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_03_R/b_MF_Toe_04_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_05_R
+        weight: 1
+      - path: Big_Dragon_2/b_MF_Pelvis/b_MF_Thigh_R/b_MF_Calf_R/b_MF_Foot_R/b_MF_Toe_R/b_MF_Toe_05_R/b_MF_Toe_06_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0199999996
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

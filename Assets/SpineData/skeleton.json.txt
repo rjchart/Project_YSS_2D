@@ -1,0 +1,33 @@
+{
+"bones": [
+	{ "name": "root" },
+	{ "name": "body/body01", "parent": "root", "length": 49.01, "x": 0.5, "y": -31, "rotation": 89.09 },
+	{ "name": "head/head00", "parent": "body/body01", "length": 31.99, "x": 58.07, "y": -4.07, "rotation": 0.9 }
+],
+"slots": [
+	{ "name": "body/body01", "bone": "body/body01", "attachment": "body/body01" },
+	{ "name": "head/head00", "bone": "head/head00", "attachment": "head/head01" }
+],
+"skins": {
+	"default": {
+		"body/body01": {
+			"body/body01": { "x": 27.99, "y": 0.44, "rotation": -89.09, "width": 64, "height": 63 }
+		},
+		"head/head00": {
+			"head/head01": { "x": 23.99, "y": 0.5, "rotation": -90, "width": 37, "height": 71 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"bones": {
+			"head/head00": {
+				"rotate": [
+					{ "time": 0.1666, "angle": -19.68 },
+					{ "time": 0.3333, "angle": -0.03 }
+				]
+			}
+		}
+	}
+}
+}

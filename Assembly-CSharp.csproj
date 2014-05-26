@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{3E802E09-8882-FB19-E949-502AA052C5D3}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_IPHONE;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_IPHONE_API;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;UNITY_IOS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\BehaviorTreeReference.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\ExternalBehaviorTree.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\Log.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\PerformInterruption.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\RestartBehaviorTree.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\StartBehaviorTree.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\StopBehaviorTree.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Actions\Wait.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\Blend.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\CrossFade.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\CrossFadeQueued.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\GetAnimatePhysics.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\IsPlaying.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\Play.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\PlayQueued.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\Rewind.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\Sample.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\SetAnimatePhysics.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\SetWrapMode.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\Stop.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\CrossFade.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetApplyRootMotion.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetBoolParameter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetDeltaPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetDeltaRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetFloatParameter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetGravityWeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetIntegerParameter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetLayerWeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\GetSpeed.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\InterruptMatchTarget.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\IsInTransition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\IsParameterControlledByCurve.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\MatchTarget.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\Play.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetApplyRootMotion.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetBoolParameter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetFloatParameter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetIntegerParameter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetLayerWeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetLookAtPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetLookAtWeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetSpeed.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\SetTrigger.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\StartPlayback.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\StartRecording.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\StopPlayback.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\StopRecording.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetIgnoreListenerPause.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetIgnoreListenerVolume.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetLoop.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetMaxDistance.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetMinDistance.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetMute.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetPan.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetPanLevel.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetPitch.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetPriority.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetSpread.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetTime.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetTimeSamples.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\GetVolume.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\IsPlaying.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\Pause.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\Play.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\PlayDelayed.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\PlayOneShot.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\PlayScheduled.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetIgnoreListenerPause.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetIgnoreListenerVolume.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetLoop.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetMaxDistance.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetMinDistance.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetMute.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetPan.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetPanLevel.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetPitch.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetPriority.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetRolloffMode.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetScheduledEndTime.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetScheduledStartTime.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetSpread.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetTime.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetVelocityUpdateMode.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetVolume.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\Stop.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Behaviour\GetIsEnabled.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Behaviour\IsEnabled.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Behaviour\SetIsEnabled.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\BoxCollider\GetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\BoxCollider\GetSize.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\BoxCollider\SetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\BoxCollider\SetSize.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\GetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\GetDirection.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\GetHeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\GetRadius.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\SetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\SetDirection.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\SetHeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CapsuleCollider\SetRadius.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\GetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\GetHeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\GetRadius.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\GetSlopeLimit.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\GetStepOffset.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\GetVelocity.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\IsGrounded.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\Move.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\SetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\SetHeight.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\SetRadius.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\SetSlopeLimit.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\SetStepOffset.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\CharacterController\SimpleMove.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\ActiveInHierarchy.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\ActiveSelf.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\CompareTag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\GetComponent.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\GetTag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\SetActive.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\GameObject\SetTag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Renderer\IsVisible.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\AddExplosionForce.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\AddForce.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\AddForceAtPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\AddRelativeForce.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\AddRelativeTorque.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\AddTorque.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetAngularDrag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetAngularVelocity.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetCenterOfMass.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetDrag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetFreezeRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetIsKinematic.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetMass.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\GetVelocity.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\IsKinematic.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\IsSleeping.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\MovePosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\MoveRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetAngularDrag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetAngularVelocity.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetCenterOfMass.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetConstraints.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetDrag.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetFreezeRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetIsKinematic.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetMass.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetVelocity.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\Sleep.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\WakeUp.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedBool.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedColor.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedFloat.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedGameObject.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedInt.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedObject.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedQuaternion.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedRect.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedString.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedTransform.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedVector2.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedVector3.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\SetSharedVector4.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SphereCollider\GetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SphereCollider\GetRadius.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SphereCollider\SetCenter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SphereCollider\SetRadius.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\Find.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\FindChild.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetChild.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetChildCount.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetEulerAngles.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetLocalEulerAngles.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetLocalPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetLocalRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetLocalScale.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetParent.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\IsChildOf.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\LookAt.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\Rotate.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\RotateAround.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetEulerAngles.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetLocalEulerAngles.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetLocalRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetLocalScale.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetParent.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetPosition.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetRotation.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\Translate.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\BehaviorTree.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\Parallel.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\ParallelSelector.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\PrioritySelector.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\RandomSelector.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\RandomSequence.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\Selector.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Composites\Sequence.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Conditionals\RandomProbability.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\Interrupt.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\Inverter.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\Repeater.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\ReturnFailure.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\ReturnSuccess.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\TaskGuard.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\UntilFailure.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Decorators\UntilSuccess.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\EntryTask.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\ExternalBehaviorTree.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedBool.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedColor.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedFloat.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedGameObject.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedInt.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedObject.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedQuaternion.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedRect.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedString.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedTransform.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector2.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3.cs" />
+     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
+     <Compile Include="Assets\Resources\UI_start\CSStartScene.cs" />
+     <Compile Include="Assets\Scripts\AManager.cs" />
+     <Compile Include="Assets\Scripts\Armor.cs" />
+     <Compile Include="Assets\Scripts\CSAttackObject.cs" />
+     <Compile Include="Assets\Scripts\CSInputCheck.cs" />
+     <Compile Include="Assets\Scripts\CSSkillItem.cs" />
+     <Compile Include="Assets\Scripts\CSUnit.cs" />
+     <Compile Include="Assets\Scripts\CSUnitYSS.cs" />
+     <Compile Include="Assets\Scripts\Consumable.cs" />
+     <Compile Include="Assets\Scripts\GameData.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\ItemDatabaseManager.cs" />
+     <Compile Include="Assets\Scripts\ItemManager.cs" />
+     <Compile Include="Assets\Scripts\SkillSceneController.cs" />
+     <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\SingletonPerfect\Singleton.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dFont.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dFontData.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dTextGeomGen.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Fonts\tk2dTextMesh.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Gui\tk2dButton.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Runtime\tk2dResource.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Runtime\tk2dSystem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Runtime\tk2dUpdateManager.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dAnimatedSprite.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dBaseSprite.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dClippedSprite.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dEditorSpriteDataUnloader.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dPixelPerfectHelper.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dRuntimeSpriteCollection.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSlicedSprite.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSprite.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteAnimation.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteAnimator.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteAttachPoint.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollection.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollectionData.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollectionInterfaces.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteCollectionSize.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteFromTexture.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSpriteGeomGen.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dStaticSpriteBatcher.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dTiledSprite.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Code\tk2dUtil.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMap.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapBuilderUtil.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapChunks.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapColliderBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapColliderBuilder2D.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapData.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapMeshBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoCoin.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoFollowCam.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoPlayer.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIBaseItemControl.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDragItem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDropDownItem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDropDownMenu.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIHoverItem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIMultiStateToggleButton.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIProgressBar.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIScrollableArea.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIScrollbar.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUISoundItem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUITextInput.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIToggleButton.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIToggleButtonGroup.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIToggleControl.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUITweenItem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIUpDownButton.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIUpDownHoverButton.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIAudioManager.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUICamera.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIItem.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUILayout.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUILayoutContainer.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUILayoutContainerSizer.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIManager.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUIMask.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUISpriteAnimator.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUITime.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUITouch.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIBaseDemoController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo2Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo3Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo5Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoAnimController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoButtonController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoCameraController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoReloadController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoRuntimeSpriteController.cs" />
+     <Compile Include="Assets\spine-csharp\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\spine-csharp\src\Animation.cs" />
+     <Compile Include="Assets\spine-csharp\src\AnimationState.cs" />
+     <Compile Include="Assets\spine-csharp\src\AnimationStateData.cs" />
+     <Compile Include="Assets\spine-csharp\src\Atlas.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\AtlasAttachmentLoader.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\Attachment.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\AttachmentLoader.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\AttachmentType.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\BoundingBoxAttachment.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\MeshAttachment.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\RegionAttachment.cs" />
+     <Compile Include="Assets\spine-csharp\src\Attachments\SkinnedMeshAttachment.cs" />
+     <Compile Include="Assets\spine-csharp\src\Bone.cs" />
+     <Compile Include="Assets\spine-csharp\src\BoneData.cs" />
+     <Compile Include="Assets\spine-csharp\src\Event.cs" />
+     <Compile Include="Assets\spine-csharp\src\EventData.cs" />
+     <Compile Include="Assets\spine-csharp\src\Json.cs" />
+     <Compile Include="Assets\spine-csharp\src\Skeleton.cs" />
+     <Compile Include="Assets\spine-csharp\src\SkeletonBounds.cs" />
+     <Compile Include="Assets\spine-csharp\src\SkeletonData.cs" />
+     <Compile Include="Assets\spine-csharp\src\SkeletonJson.cs" />
+     <Compile Include="Assets\spine-csharp\src\Skin.cs" />
+     <Compile Include="Assets\spine-csharp\src\Slot.cs" />
+     <Compile Include="Assets\spine-csharp\src\SlotData.cs" />
+     <Compile Include="Assets\spine-unity\Assets\Spine\AtlasAsset.cs" />
+     <Compile Include="Assets\spine-unity\Assets\Spine\BoneComponent.cs" />
+     <Compile Include="Assets\spine-unity\Assets\Spine\SkeletonAnimation.cs" />
+     <Compile Include="Assets\spine-unity\Assets\Spine\SkeletonDataAsset.cs" />
+     <Compile Include="Assets\spine-unity\Assets\Spine\SkeletonRenderer.cs" />
+     <Compile Include="Assets\spine-unity\Assets\examples\goblins\Goblins.cs" />
+     <Compile Include="Assets\spine-unity\Assets\examples\spineboy\Spineboy.cs" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
+     <None Include="Assets\SpineData\YSS\skeleton.json.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+     <None Include="Assets\spine-unity\Assets\examples\goblins\data\goblins-ffd.atlas.txt" />
+     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d_demo\Credits.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito24.fnt" />
+     <None Include="Assets\SpineData\skeleton.atlas.txt" />
+     <None Include="Assets\spine-unity\Assets\examples\spineboy\data\spineboy.json.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitCutoutVertexColor.shader" />
+     <None Include="Assets\spine-unity\Assets\examples\goblins\data\goblins-ffd.json.txt" />
+     <None Include="Assets\SingletonPerfect\README.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+     <None Include="Assets\SpineData\YSS\skeleton.atlas.txt" />
+     <None Include="Assets\spine-unity\Assets\examples\dragon\data\dragon.json.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d_demo\demobmfont\test.fnt" />
+     <None Include="Assets\spine-unity\Assets\Spine\Shaders\Skeleton.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Font\OldSansBlack\OldSansBlack.fnt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+     <None Include="Assets\spine-unity\Assets\examples\spineboy\data\spineboy.atlas.txt" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito16.fnt" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito32.fnt" />
+     <None Include="Assets\SpineData\skeleton.json.txt" />
+     <None Include="Assets\spine-unity\Assets\examples\dragon\data\dragon.atlas.txt" />
+     <None Include="Assets\spine-unity\Assets\Spine\Shaders\SkeletonLit.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d_demo\democameradata\source\democamerafont.fnt" />
+ <Reference Include="Assets\Behavior Designer\Runtime\BehaviorDesignerRuntime">
+ <HintPath>Assets\Behavior Designer\Runtime\BehaviorDesignerRuntime.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
