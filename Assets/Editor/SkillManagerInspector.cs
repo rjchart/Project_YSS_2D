@@ -12,40 +12,59 @@ internal class SkillManagerInspector : Editor {
 
 	public override void OnInspectorGUI()
 	{
+
 		 SkillManager sm = target as SkillManager;
+		 EditorGUILayout.BeginHorizontal();
 		 EditorGUILayout.LabelField("Skill Managment: " + sm.skillList.Count);
+
+		if (GUILayout.Button("reorder"))
+		{
+			sm.ReorderSkills();
+		}
+		if (GUILayout.Button("save"))
+		{
+			sm.Save();
+		}
+		if (GUILayout.Button("load"))
+		{
+			sm.Load();
+		}
+
+		EditorGUILayout.EndHorizontal();
 
 		 // EditorGUILayout.LabelField("Number of Total Skills: " + sm.skillList.Count);
 
-		 List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
-		 List<SwordSkill> swordSkills = new List<SwordSkill>();
-		 List<Skill> otherSkills = new List<Skill>();
+		 // List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
+		 // List<SwordSkill> swordSkills = new List<SwordSkill>();
+		 // List<Skill> otherSkills = new List<Skill>();
 
-		 foreach (Skill oneSkill in sm.skillList)
-		 {
-		 	if (oneSkill.GetType() == typeof(DefaultSkill))
-		 	{
-		 		defaultSkills.Add((DefaultSkill)oneSkill);
-		 	}
+		 // foreach (Skill oneSkill in sm.skillList)
+		 // {
+		 // 	if (oneSkill.GetType() == typeof(DefaultSkill))
+		 // 	{
+		 // 		defaultSkills.Add((DefaultSkill)oneSkill);
+		 // 	}
 
-		 	else if (oneSkill.GetType() == typeof(SwordSkill))
-		 	{
-		 		swordSkills.Add((SwordSkill)oneSkill);
-		 	}
+		 // 	else if (oneSkill.GetType() == typeof(SwordSkill))
+		 // 	{
+		 // 		swordSkills.Add((SwordSkill)oneSkill);
+		 // 	}
 
-		 	else
-		 	{
-		 		otherSkills.Add(oneSkill);
-		 	}
-		 }
+		 // 	else
+		 // 	{
+		 // 		otherSkills.Add(oneSkill);
+		 // 	}
+		 // }
 
 		 // EditorGUILayout.LabelField("Total DefaultSkills: " + defaultSkills.Count.ToString());
 		 // EditorGUILayout.LabelField("Total Skills: " + sm.skillList.Count.ToString());
 
-		 showingDefaultSkills = EditorGUILayout.Foldout(showingDefaultSkills, "DefaultSkills: " + defaultSkills.Count);
+		// sm.ReorderSkills();
+
+		 showingDefaultSkills = EditorGUILayout.Foldout(showingDefaultSkills, "DefaultSkills: " + sm.defaultSkills.Count);
 		 if (showingDefaultSkills) {
 		 	EditorGUI.indentLevel = 1;
-			foreach (DefaultSkill defaultSkill in defaultSkills)
+			foreach (DefaultSkill defaultSkill in sm.defaultSkills)
 			{
 				EditorGUILayout.BeginHorizontal();
 
@@ -79,16 +98,17 @@ internal class SkillManagerInspector : Editor {
 				newDefaultSkill.skillName = "new defaultSkill";
 				newDefaultSkill.description = "";
 				newDefaultSkill.cost = 0;
+				newDefaultSkill.type = 0;
 				sm.skillList.Add(newDefaultSkill);
 			}
 
 		 	EditorGUI.indentLevel = 0;
 		 }
 
-		 showingSwordSkills = EditorGUILayout.Foldout(showingSwordSkills, "SwordSkills:" + swordSkills.Count);
+		 showingSwordSkills = EditorGUILayout.Foldout(showingSwordSkills, "SwordSkills:" + sm.swordSkills.Count);
 		 if (showingSwordSkills) {
 		 	EditorGUI.indentLevel = 1;
-			 foreach (SwordSkill swordSkill in swordSkills)
+			 foreach (SwordSkill swordSkill in sm.swordSkills)
 			 {
 				EditorGUILayout.BeginHorizontal();
 
@@ -121,6 +141,7 @@ internal class SkillManagerInspector : Editor {
 				newSwordSkill.skillName = "new SwordSkill";
 				newSwordSkill.description = "";
 				newSwordSkill.cost = 0;
+				newSwordSkill.type = 1;
 				sm.skillList.Add(newSwordSkill);
 			}
 
@@ -128,10 +149,10 @@ internal class SkillManagerInspector : Editor {
 		 }
 
 
-		 showingOtherSkills = EditorGUILayout.Foldout(showingOtherSkills, "OtherSkills: " + otherSkills.Count);
+		 showingOtherSkills = EditorGUILayout.Foldout(showingOtherSkills, "OtherSkills: " + sm.otherSkills.Count);
 		 if (showingOtherSkills) {
 		 	EditorGUI.indentLevel = 1;
-			foreach (Skill otherSkill in otherSkills)
+			foreach (Skill otherSkill in sm.otherSkills)
 			{
 				EditorGUILayout.BeginHorizontal();
 
@@ -152,6 +173,7 @@ internal class SkillManagerInspector : Editor {
 					otherSkill.cost = EditorGUILayout.IntField("Cost: ", otherSkill.cost);
 					otherSkill.gi = EditorGUILayout.IntField("Gi: ", otherSkill.gi);
 					otherSkill.sal = EditorGUILayout.IntField("Sal: ", otherSkill.sal);
+					otherSkill.type = 2;
 					EditorGUI.indentLevel -= 1;
 					EditorGUILayout.Space();	
 

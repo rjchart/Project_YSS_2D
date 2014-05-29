@@ -33,8 +33,8 @@ public class ItemDatabaseManager : EditorWindow {
 
 	void OnGUI()
 	{
-
-		itemManager = EditorGUILayout.ObjectField(itemManager, typeof(ItemManager)) as ItemManager;
+		
+		itemManager = EditorGUILayout.ObjectField("ItemManager",itemManager, typeof(ItemManager), false) as ItemManager;
 		if (itemManager != null)
 		{
 			currentItemTypeToCreate = (ItemTypeToCreate)EditorGUILayout.EnumPopup(currentItemTypeToCreate); 

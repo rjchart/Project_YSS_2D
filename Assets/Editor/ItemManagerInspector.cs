@@ -13,8 +13,8 @@ internal class ItemManagerInspector : Editor {
 
 	public override void OnInspectorGUI()
 	{
-		 EditorGUILayout.LabelField("Item Managment");
 		 ItemManager im = target as ItemManager;
+		 EditorGUILayout.LabelField("Item Managment: " + im.itemList.Count);
 
 		 // EditorGUILayout.LabelField("Number of Total Items: " + im.itemList.Count);
 
@@ -25,6 +25,11 @@ internal class ItemManagerInspector : Editor {
 
 		 foreach (Item oneItem in im.itemList)
 		 {
+		 	if (oneItem == null) {
+		 		EditorGUILayout.LabelField("NULL");
+		 		continue;
+		 	}
+
 		 	if (oneItem.GetType() == typeof(Weapon))
 		 	{
 		 		weapons.Add((Weapon)oneItem);

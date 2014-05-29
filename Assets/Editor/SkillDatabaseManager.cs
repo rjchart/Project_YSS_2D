@@ -11,11 +11,11 @@ public class SkillDatabaseManager : EditorWindow {
 		window.Show();
 	}
 
-	public enum SkillTypeToCreate
-	{
-		DefaultSkill,
-		SwordSkill
-	}
+	// public enum SkillTypeToCreate
+	// {
+	// 	DefaultSkill,
+	// 	SwordSkill
+	// }
 
 	public SkillTypeToCreate currentSkillTypeToCreate = SkillTypeToCreate.DefaultSkill;
 
@@ -28,7 +28,7 @@ public class SkillDatabaseManager : EditorWindow {
 	void OnGUI()
 	{
 
-		skillManager = EditorGUILayout.ObjectField(skillManager, typeof(SkillManager)) as SkillManager;
+		skillManager = EditorGUILayout.ObjectField("Skill Manager", skillManager, typeof(SkillManager), false) as SkillManager;
 		if (skillManager != null)
 		{
 			currentSkillTypeToCreate = (SkillTypeToCreate)EditorGUILayout.EnumPopup(currentSkillTypeToCreate); 
@@ -55,6 +55,7 @@ public class SkillDatabaseManager : EditorWindow {
 						newDefaultSkill.skillName = newSkillName;
 						newDefaultSkill.description = newSkillDescription;
 						newDefaultSkill.cost = newSkillCost;
+						newDefaultSkill.type = (int)currentSkillTypeToCreate;
 						skillManager.skillList.Add(newDefaultSkill);
 						break;
 
@@ -63,6 +64,7 @@ public class SkillDatabaseManager : EditorWindow {
 						newSwordSkill.skillName = newSkillName;
 						newSwordSkill.description = newSkillDescription;
 						newSwordSkill.cost = newSkillCost;
+						newSwordSkill.type = (int)currentSkillTypeToCreate;
 						skillManager.skillList.Add(newSwordSkill);
 						break;
 
