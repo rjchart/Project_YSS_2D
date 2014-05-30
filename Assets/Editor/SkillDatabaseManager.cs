@@ -51,7 +51,7 @@ public class SkillDatabaseManager : EditorWindow {
 				switch(currentSkillTypeToCreate)
 				{
 					case SkillTypeToCreate.DefaultSkill:
-						DefaultSkill newDefaultSkill = (DefaultSkill)ScriptableObject.CreateInstance<DefaultSkill>();
+						DefaultSkill newDefaultSkill = new DefaultSkill();
 						newDefaultSkill.skillName = newSkillName;
 						newDefaultSkill.description = newSkillDescription;
 						newDefaultSkill.cost = newSkillCost;
@@ -60,7 +60,7 @@ public class SkillDatabaseManager : EditorWindow {
 						break;
 
 					case SkillTypeToCreate.SwordSkill:
-						SwordSkill newSwordSkill = (SwordSkill)ScriptableObject.CreateInstance<SwordSkill>();
+						SwordSkill newSwordSkill = new SwordSkill();
 						newSwordSkill.skillName = newSkillName;
 						newSwordSkill.description = newSkillDescription;
 						newSwordSkill.cost = newSkillCost;

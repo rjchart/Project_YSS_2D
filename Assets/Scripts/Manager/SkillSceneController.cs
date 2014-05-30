@@ -8,7 +8,7 @@ public class SkillSceneController : MonoBehaviour {
 	public tk2dUILayout prefabSkillSlot;
 	public tk2dUILayout prefabDraggedItem;
 
-	public ItemManager itemManager;
+	// private SkillManager skillManager;
 
 	float itemStride = 0;
 	float slotStride = 0;
@@ -22,16 +22,16 @@ public class SkillSceneController : MonoBehaviour {
 
 	tk2dUIItem draggedItem;
 	// Internal lists for caching
-	List<CSSkillItem> cachedContentItems = new List<CSSkillItem>();
+	// List<CSSkillItem> cachedContentItems = new List<CSSkillItem>();
 	List<CSSkillItem> unusedContentItems = new List<CSSkillItem>();
-	List<CSSkillItem> unusedContentSlots = new List<CSSkillItem>();
+	List<CSSkillSlot> unusedContentSlots = new List<CSSkillSlot>();
 
-	int firstCachedItem = -1;
+	// int firstCachedItem = -1;
 
-	int maxVisibleItems = 0;
-	int maxVisibleSlots = 0;
+	// int maxVisibleItems = 0;
+	// int maxVisibleSlots = 0;
 
-	List<string> skillItemNames = new List<string> { "UI_skill_iconA01", "UI_skill_iconA02", "UI_skill_iconA03", "UI_skill_iconB01", "UI_skill_iconB02", "UI_skill_iconB03"};
+	// List<string> skillItemNames = new List<string> { "UI_skill_iconA01", "UI_skill_iconA02", "UI_skill_iconA03", "UI_skill_iconB01", "UI_skill_iconB02", "UI_skill_iconB03"};
 	List<string> skillSlotNames = new List<string> { "UI_skill_arrow01", "UI_skill_arrow02", "UI_skill_arrow03", "UI_skill_arrow04", "UI_skill_arrow05", "UI_skill_arrow06", "UI_skill_arrow07", "UI_skill_arrow08", "UI_skill_arrowD01", "UI_skill_arrowD02", "UI_skill_arrowD03", "UI_skill_arrowD04", "UI_skill_arrowD05", "UI_skill_arrowD06", "UI_skill_arrowD07", "UI_skill_arrowD08" };
 
 	void OnEnable() {
@@ -49,15 +49,17 @@ public class SkillSceneController : MonoBehaviour {
 		// don't want it visible when the game is running, as it is in the scene
 		// prefabItem.transform.parent = null;
 		// DoSetActive( prefabItem.transform, false );
-
+		// skillManager = transform.GetComponent<SkillManager>();
 
 		// How many items do we need to buffer?
 		itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
 		// maxVisibleItems = Mathf.CeilToInt(skillItemScrollableArea.VisibleAreaLength / itemStride) + 1;
 		// maxVisibleSlots = Mathf.CeilToInt(skillSlotScrollableArea.VisibleAreaLength / slotStride) + 1;
 
-		// Debug.Log("SkillManager Number: " + skillManager.skillList.Count);
-		skillItemScrollableArea.ContentLength = skillItemNames.Count * 1.3f * itemStride + .3f;
+		SkillDataSingleton.Instance.Load();
+		Debug.Log("skill number: " + SkillDataSingleton.Instance.skillList.Count);
+		// Debug.Log("SkillManager Number: " + SkillDataSingleton.Instance.skillList.Count);
+		skillItemScrollableArea.ContentLength = SkillDataSingleton.Instance.swordSkills.Count * 1.3f * itemStride + .3f;
 
 		Debug.Log("itemStride: " + prefabItem.GetMaxBounds() + ", area: " + prefabItem.GetMinBounds());
 		InitializeSkillSlotSetting();
@@ -95,23 +97,26 @@ public class SkillSceneController : MonoBehaviour {
 			draggedItem.transform.localPosition = new Vector3(0, 0, -.5f);
 
 		bool isOk = false;
-		CSSkillItem getItem = null;
-		foreach (CSSkillItem item in unusedContentSlots) {
+		CSSkillSlot getSlot = null;
+		foreach (CSSkillSlot item in unusedContentSlots) {
 			if (item.IsMouseInItemBox() && item.enable) {
 				isOk = true;
-				getItem = item;
+				getSlot = item;
 				break;
 			}
 		}
-		if (isOk && getItem) {
+		if (isOk && getSlot) {
 			Debug.Log("Gacha!!");
 			// Transform childLayout = getLayout.transform.Find("DroppedSkill");
 			// childLayout.gameObject.SetActive(true);
 
 			CSSkillItem getSkill = upItem.transform.parent.GetComponent<CSSkillItem>();
-			getItem.EnableOnlyStateWithIndex(2);
-			getItem.ChangeAllItemImage(getSkill.skillName);
+			getSlot.ChangeSkill(getSkill.skillName);
+			// getItem.EnableOnlyStateWithIndex(2);
+			// getItem.ChangeAllItemImage(getSkill.skillName);
 			// ChangeItemImage(childLayout, getSkill.skillName);
+			SkillDataSingleton.Instance.skillSettingDic[getSlot.slotName] = getSlot.skillName;
+			SkillDataSingleton.Instance.Save();
 		}
 		else
 			Debug.Log("Nope!!");
@@ -174,28 +179,35 @@ public class SkillSceneController : MonoBehaviour {
 	// }
 
 	void SkillSlotClicked(tk2dUIItem item) {
-		CSSkillItem getItem = item.transform.parent.gameObject.GetComponent<CSSkillItem>();
-		getItem.EnableOnlyStateWithIndex(1);
+		CSSkillSlot getSlot = item.transform.parent.gameObject.GetComponent<CSSkillSlot>();
+		getSlot.ChangeSkill("N/A");
+		getSlot.SetEnable();
+		SkillDataSingleton.Instance.skillSettingDic[getSlot.slotName] = getSlot.skillName;
+		SkillDataSingleton.Instance.Save();
+
+		// getSlot.EnableOnlyStateWithIndex(1);
 	}
 
 	void InitializeSkillSlotSetting() {
 		slotStride = (prefabSkillSlot.GetMaxBounds() - prefabSkillSlot.GetMinBounds()).y;
 		skillSlotScrollableArea.ContentLength = skillSlotNames.Count * 1.3f * slotStride + .3f;
 
-		int maxSlotNumber = skillSlotNames.Count;
+		// int maxSlotNumber = skillSlotNames.Count;
+		Debug.Log("dic count: " + SkillDataSingleton.Instance.skillSettingDic.Count);
 
 		List<string> unregisteredSkillSlotNames = new List<string>(skillSlotNames);
 
-		foreach (string slotName in currentSkillItemSlots)
+		// foreach (string slotName in currentSkillItemSlots)
+		foreach (KeyValuePair<string, string> skillSlot in SkillDataSingleton.Instance.skillSettingDic)
 		{
-			unregisteredSkillSlotNames.Remove(slotName);
+			unregisteredSkillSlotNames.Remove(skillSlot.Key);
 		}
 
 		Debug.Log("List unregisteredSkillSlotNames: " + unregisteredSkillSlotNames.Count);
 
 		// Buffer the prefabs that we will need	
 		float y = -.3f;
-		foreach (string slotName in currentSkillItemSlots) {
+		foreach (KeyValuePair<string,string> skillSlot in SkillDataSingleton.Instance.skillSettingDic) {
 			tk2dUILayout layout = Instantiate(prefabSkillSlot) as tk2dUILayout;
 			layout.transform.parent = skillSlotScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
@@ -203,8 +215,9 @@ public class SkillSceneController : MonoBehaviour {
 
 			// ChangeItemImage(layout.transform, slotName);
 
-			CSSkillItem getSkill = layout.gameObject.GetComponent<CSSkillItem>();
-			getSkill.ChangeAllItemImage(slotName);
+			CSSkillSlot getSkill = layout.gameObject.GetComponent<CSSkillSlot>();
+			getSkill.ChangeSlot(skillSlot.Key);
+			getSkill.ChangeSkill(skillSlot.Value);
 			getSkill.SetEnable();
 
 			unusedContentSlots.Add( getSkill );
@@ -221,9 +234,10 @@ public class SkillSceneController : MonoBehaviour {
 			// Transform childLayout = layout.transform.Find("AddSkillButton");
 			// childLayout.gameObject.SetActive(true);
 
-			CSSkillItem getSkill = layout.gameObject.GetComponent<CSSkillItem>();
-			getSkill.ChangeAllItemImage(slotName);
-			getSkill.EnableOnlyStateWithIndex(0);
+			CSSkillSlot getSkill = layout.gameObject.GetComponent<CSSkillSlot>();
+			getSkill.ChangeSlot(slotName);
+			getSkill.SetDisable();
+
 
 			unusedContentSlots.Add( getSkill );
 		}
@@ -231,18 +245,24 @@ public class SkillSceneController : MonoBehaviour {
 
 	void InitializeSkillItemSetting() {
 		itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
-		skillItemScrollableArea.ContentLength = skillItemNames.Count * 1.3f * itemStride + .3f;
+		skillItemScrollableArea.ContentLength = SkillDataSingleton.Instance.swordSkills.Count * 1.3f * itemStride + .3f;
 
 		// Buffer the prefabs that we will need	
 		float y = -.3f;
-		foreach (string itemName in skillItemNames) {
+		foreach (Skill oneSkill in SkillDataSingleton.Instance.swordSkills) {
+			Debug.Log("oneSkill");
+			Debug.Log("oneSkill name: " + oneSkill.skillName);
+			string itemName = "UI_skill_" + oneSkill.skillName;
 			tk2dUILayout layout = Instantiate(prefabItem) as tk2dUILayout;
 			layout.transform.parent = skillItemScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
 			y -= (float) (itemStride * 1.3);
 
 			CSSkillItem getSkill = layout.gameObject.GetComponent<CSSkillItem>();
-			getSkill.ChangeAllItemImage(itemName);
+			getSkill.ChangeSkill(itemName);
+			getSkill.CustomizeListObject(oneSkill);
+
+			// CustomizeListObject(layout.transform, oneSkill);
 			// ChangeItemImage(layout.transform, itemName);
 
 			unusedContentItems.Add( getSkill );
@@ -250,13 +270,5 @@ public class SkillSceneController : MonoBehaviour {
 	}
 
 	void SaveCurrentState() {
-	}
-	
-	void CustomizeListObject( Transform contentRoot, int itemId ) {
-		// contentRoot.Find("Name").GetComponent<tk2dTextMesh>().text = allItems[itemId].name;
-		// contentRoot.Find("Score").GetComponent<tk2dTextMesh>().text = "Score: " + allItems[itemId].score;
-		// contentRoot.Find("Time").GetComponent<tk2dTextMesh>().text = "Time: " + allItems[itemId].time;
-		// contentRoot.Find("Portrait").GetComponent<tk2dBaseSprite>().color = allItems[itemId].color;
-		// contentRoot.localPosition = new Vector3(itemId * itemStride, 0, 0);
 	}
 }

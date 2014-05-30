@@ -8,7 +8,7 @@ public enum SkillTypeToCreate
 }
 
 [System.Serializable]
-public class Skill : ScriptableObject {
+public class Skill {
 
 	public int cost = 0;
 	public string skillName = "";

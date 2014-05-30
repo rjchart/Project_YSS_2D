@@ -6,7 +6,20 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 [Serializable]
-public class SkillManager : MonoBehaviour {
+public class SaveDataForSkill 
+{
+	public int cost;
+	public string skillName;
+	public string description;
+
+	public int gi;
+	public int sal;
+
+	public int type;
+}
+
+[Serializable]
+public class SkillDataSingleton : Singleton<SkillDataSingleton> {
 
 	[SerializeField]
 	public List<Skill> skillList = new List<Skill>();
@@ -19,6 +32,14 @@ public class SkillManager : MonoBehaviour {
 	public List<SwordSkill> swordSkills = new List<SwordSkill>();
 	public List<Skill> otherSkills = new List<Skill>();
 
+
+	public static SkillDataSingleton Instance {
+		get {
+			return ((SkillDataSingleton)mInstance);
+		} set {
+			mInstance = value;
+		}
+	}
 
 	public void Save() 
 	{

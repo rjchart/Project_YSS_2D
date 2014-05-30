@@ -20,13 +20,13 @@ public class CSInputCheck : CSUnit {
 	private AnimatorStateInfo currentBaseState;
 	private bool _isFinishAttack = false;
 
-	static int standState = Animator.StringToHash("Base Layer.stand");
+	// static int standState = Animator.StringToHash("Base Layer.stand");
 	static int moveState = Animator.StringToHash("Base Layer.move");
 	// static int swing01State = Animator.StringToHash("Base Layer.swing01");
 	// static int swing02State = Animator.StringToHash("Base Layer.swing02");
 	// static int swing03State = Animator.StringToHash("Base Layer.swing03");
 	// static int swing04State = Animator.StringToHash("Base Layer.swing04");
-	static int swing05State = Animator.StringToHash("Base Layer.swing05");
+	// static int swing05State = Animator.StringToHash("Base Layer.swing05");
 
 	// Use this for initialization
 	void Start () {

@@ -14,9 +14,14 @@ internal class SkillManagerInspector : Editor {
 	{
 
 		 SkillManager sm = target as SkillManager;
+
 		 EditorGUILayout.BeginHorizontal();
 		 EditorGUILayout.LabelField("Skill Managment: " + sm.skillList.Count);
 
+		if (GUILayout.Button("removeAll"))
+		{
+			sm.skillList.Clear();
+		}
 		if (GUILayout.Button("reorder"))
 		{
 			sm.ReorderSkills();
@@ -34,37 +39,50 @@ internal class SkillManagerInspector : Editor {
 
 		 // EditorGUILayout.LabelField("Number of Total Skills: " + sm.skillList.Count);
 
-		 // List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
-		 // List<SwordSkill> swordSkills = new List<SwordSkill>();
-		 // List<Skill> otherSkills = new List<Skill>();
+		 List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
+		 List<SwordSkill> swordSkills = new List<SwordSkill>();
+		 List<Skill> otherSkills = new List<Skill>();
+		 foreach (Skill oneSkill in sm.skillList)
+		 {
+		 	if (oneSkill.GetType() == typeof(DefaultSkill))
+		 	{
+		 		defaultSkills.Add((DefaultSkill)oneSkill);
+		 	}
 
-		 // foreach (Skill oneSkill in sm.skillList)
-		 // {
-		 // 	if (oneSkill.GetType() == typeof(DefaultSkill))
-		 // 	{
-		 // 		defaultSkills.Add((DefaultSkill)oneSkill);
-		 // 	}
+		 	else if (oneSkill.GetType() == typeof(SwordSkill))
+		 	{
+		 		swordSkills.Add((SwordSkill)oneSkill);
+		 	}
 
-		 // 	else if (oneSkill.GetType() == typeof(SwordSkill))
-		 // 	{
-		 // 		swordSkills.Add((SwordSkill)oneSkill);
-		 // 	}
-
-		 // 	else
-		 // 	{
-		 // 		otherSkills.Add(oneSkill);
-		 // 	}
-		 // }
+		 	else
+		 	{
+		 		otherSkills.Add(oneSkill);
+		 	}
+		 }
 
 		 // EditorGUILayout.LabelField("Total DefaultSkills: " + defaultSkills.Count.ToString());
 		 // EditorGUILayout.LabelField("Total Skills: " + sm.skillList.Count.ToString());
 
 		// sm.ReorderSkills();
 
-		 showingDefaultSkills = EditorGUILayout.Foldout(showingDefaultSkills, "DefaultSkills: " + sm.defaultSkills.Count);
+		EditorGUILayout.BeginHorizontal();
+		showingDefaultSkills = EditorGUILayout.Foldout(showingDefaultSkills, "DefaultSkills: " + defaultSkills.Count);
+		if (GUILayout.Button("Add"))
+		{
+			DefaultSkill newDefaultSkill = new DefaultSkill();
+			newDefaultSkill.skillName = "new defaultSkill";
+			newDefaultSkill.description = "";
+			newDefaultSkill.cost = 0;
+			newDefaultSkill.type = 0;
+			// EditorUtility.SetDirty(newDefaultSkill);
+			// DontDestroyOnLoad(newDefaultSkill);
+			sm.skillList.Add(newDefaultSkill);
+			sm.ReorderSkills();
+		}
+		 EditorGUILayout.EndHorizontal();
 		 if (showingDefaultSkills) {
 		 	EditorGUI.indentLevel = 1;
-			foreach (DefaultSkill defaultSkill in sm.defaultSkills)
+			foreach (DefaultSkill defaultSkill in defaultSkills)
 			{
 				EditorGUILayout.BeginHorizontal();
 
@@ -72,7 +90,7 @@ internal class SkillManagerInspector : Editor {
 				if (GUILayout.Button("-"))
 				{
 					sm.skillList.Remove(defaultSkill);
-					DefaultSkill.DestroyImmediate(defaultSkill);
+					sm.ReorderSkills();
 				}
 
 				EditorGUILayout.EndHorizontal();
@@ -92,31 +110,36 @@ internal class SkillManagerInspector : Editor {
 
 			}
 
-			if (GUILayout.Button("Add New DefaultSkill"))
-			{
-				DefaultSkill newDefaultSkill = (DefaultSkill)ScriptableObject.CreateInstance<DefaultSkill>();
-				newDefaultSkill.skillName = "new defaultSkill";
-				newDefaultSkill.description = "";
-				newDefaultSkill.cost = 0;
-				newDefaultSkill.type = 0;
-				sm.skillList.Add(newDefaultSkill);
-			}
 
 		 	EditorGUI.indentLevel = 0;
 		 }
 
-		 showingSwordSkills = EditorGUILayout.Foldout(showingSwordSkills, "SwordSkills:" + sm.swordSkills.Count);
-		 if (showingSwordSkills) {
-		 	EditorGUI.indentLevel = 1;
-			 foreach (SwordSkill swordSkill in sm.swordSkills)
-			 {
+		 EditorGUILayout.BeginHorizontal();
+		showingSwordSkills = EditorGUILayout.Foldout(showingSwordSkills, "SwordSkills:" + swordSkills.Count);
+		if (GUILayout.Button("Add"))
+		{
+			SwordSkill newSwordSkill = new SwordSkill();
+			newSwordSkill.skillName = "new SwordSkill";
+			newSwordSkill.description = "";
+			newSwordSkill.cost = 0;
+			newSwordSkill.type = 1;
+			// EditorUtility.SetDirty(newSwordSkill);
+			sm.skillList.Add(newSwordSkill);
+			sm.ReorderSkills();
+		}
+		 EditorGUILayout.EndHorizontal();
+
+		if (showingSwordSkills) {
+			EditorGUI.indentLevel = 1;
+			foreach (SwordSkill swordSkill in swordSkills)
+			{
 				EditorGUILayout.BeginHorizontal();
 
 				swordSkill.showing = EditorGUILayout.Foldout(swordSkill.showing, swordSkill.skillName);
 				if (GUILayout.Button("-"))
 				{
 					sm.skillList.Remove(swordSkill);
-					SwordSkill.DestroyImmediate(swordSkill);
+					sm.ReorderSkills();
 				}
 
 				EditorGUILayout.EndHorizontal();
@@ -133,26 +156,30 @@ internal class SkillManagerInspector : Editor {
 					EditorGUILayout.Space();	
 
 				}
-			 }
-
-			if (GUILayout.Button("Add New SwordSkill"))
-			{
-				SwordSkill newSwordSkill = (SwordSkill)ScriptableObject.CreateInstance<SwordSkill>();
-				newSwordSkill.skillName = "new SwordSkill";
-				newSwordSkill.description = "";
-				newSwordSkill.cost = 0;
-				newSwordSkill.type = 1;
-				sm.skillList.Add(newSwordSkill);
 			}
 
-		 	EditorGUI.indentLevel = 0;
-		 }
+
+			EditorGUI.indentLevel = 0;
+		}
 
 
-		 showingOtherSkills = EditorGUILayout.Foldout(showingOtherSkills, "OtherSkills: " + sm.otherSkills.Count);
+		 EditorGUILayout.BeginHorizontal();
+		showingOtherSkills = EditorGUILayout.Foldout(showingOtherSkills, "OtherSkills: " + otherSkills.Count);
+		if (GUILayout.Button("Add"))
+		{
+			Skill newOtherSkill = new Skill();
+			newOtherSkill.skillName = "new otherSkill";
+			newOtherSkill.description = "";
+			newOtherSkill.cost = 0;
+			// EditorUtility.SetDirty(newOtherSkill);
+			sm.skillList.Add(newOtherSkill);
+			sm.ReorderSkills();
+		}
+		 EditorGUILayout.EndHorizontal();
+
 		 if (showingOtherSkills) {
 		 	EditorGUI.indentLevel = 1;
-			foreach (Skill otherSkill in sm.otherSkills)
+			foreach (Skill otherSkill in otherSkills)
 			{
 				EditorGUILayout.BeginHorizontal();
 
@@ -160,7 +187,8 @@ internal class SkillManagerInspector : Editor {
 				if (GUILayout.Button("-"))
 				{
 					sm.skillList.Remove(otherSkill);
-					Skill.DestroyImmediate(otherSkill);
+					// Skill.DestroyImmediate(otherSkill);
+					sm.ReorderSkills();
 				}
 
 				EditorGUILayout.EndHorizontal();
@@ -181,14 +209,6 @@ internal class SkillManagerInspector : Editor {
 
 			}
 
-			if (GUILayout.Button("Add New Skill"))
-			{
-				Skill newOtherSkill = (Skill)ScriptableObject.CreateInstance<Skill>();
-				newOtherSkill.skillName = "new otherSkill";
-				newOtherSkill.description = "";
-				newOtherSkill.cost = 0;
-				sm.skillList.Add(newOtherSkill);
-			}
 
 		 	EditorGUI.indentLevel = 0;
 		 }

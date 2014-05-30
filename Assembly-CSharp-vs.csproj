@@ -278,7 +278,6 @@
      <Compile Include="Assets\Resources\UI_start\CSStartScene.cs" />
      <Compile Include="Assets\Scripts\CSAttackObject.cs" />
      <Compile Include="Assets\Scripts\CSInputCheck.cs" />
-     <Compile Include="Assets\Scripts\CSSkillItem.cs" />
      <Compile Include="Assets\Scripts\CSUnit.cs" />
      <Compile Include="Assets\Scripts\CSUnitYSS.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
@@ -293,7 +292,10 @@
      <Compile Include="Assets\Scripts\Skill\SkillManager.cs" />
      <Compile Include="Assets\Scripts\Skill\Skill_Default.cs" />
      <Compile Include="Assets\Scripts\Skill\Skill_Sword.cs" />
+     <Compile Include="Assets\Scripts\SkillSlots\CSSkillItem.cs" />
+     <Compile Include="Assets\Scripts\SkillSlots\CSSkillSlot.cs" />
      <Compile Include="Assets\SingletonPerfect\Singleton.cs" />
+     <Compile Include="Assets\SingletonPerfect\SkillDataSingleton.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />

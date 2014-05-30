@@ -5,7 +5,7 @@ using System.Collections;
 public class Item : ScriptableObject {
 
 	public int cost = 0;
-	public string name = "";
+	public string itemName = "";
 	public string description = "";
 	public bool showing = false;
 
