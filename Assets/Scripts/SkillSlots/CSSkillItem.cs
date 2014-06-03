@@ -19,9 +19,10 @@ public class CSSkillItem : MonoBehaviour {
 	
 	}
 
-	public void ChangeSkill(string skillName) {
-		ChangeAllItemImage(skillName);
-		skillName = name;
+	public void ChangeSkill(string itemName) {
+		ChangeAllItemImage(itemName);
+		skillName = itemName;
+		Debug.Log("skill name : " + itemName);
 	}
 
 	public void EnableStateWithIndex(int index) {

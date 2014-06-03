@@ -44,7 +44,7 @@ public class SkillDataSingleton : Singleton<SkillDataSingleton> {
 	public void Save() 
 	{
 
-		SetSkillInfoDatas();
+		// SetSkillInfoDatas();
 		SetSkillSettingDatas();
 
 	}
@@ -52,21 +52,23 @@ public class SkillDataSingleton : Singleton<SkillDataSingleton> {
 	void SetSkillInfoDatas()
 	{
 		var bf = new BinaryFormatter();
-		FileStream file = new FileStream(Application.persistentDataPath + "/SkillInfo.dat", FileMode.Create, FileAccess.Write); 
+		FileStream file = new FileStream(Application.persistentDataPath + "/SkillInfo.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite); 
 		SaveDatas();
 
 		bf.Serialize(file, saveList);
 		Debug.Log("saved");
+		file.Close();
 
 	}
 
 	void SetSkillSettingDatas()
 	{
 		var bf = new BinaryFormatter();
-		FileStream file = new FileStream(Application.persistentDataPath + "/SkillSetting.dat", FileMode.Create, FileAccess.Write); 
+		FileStream file = new FileStream(Application.persistentDataPath + "/SkillSetting.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite); 
 
 		bf.Serialize(file, skillSettingDic);
 		Debug.Log("saved Dic");
+		file.Close();
 
 	}
 
@@ -87,6 +89,7 @@ public class SkillDataSingleton : Singleton<SkillDataSingleton> {
 			// saveList.Clear();
 			saveList = (List<SaveDataForSkill>)bf.Deserialize(file);
 			LoadDatas();
+			file.Close();
 		}
 		Debug.Log("skillInfo loaded");
 	}
@@ -99,6 +102,7 @@ public class SkillDataSingleton : Singleton<SkillDataSingleton> {
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = new FileStream(path, FileMode.Open, FileAccess.Read);
 			skillSettingDic = (Dictionary<string,string>)bf.Deserialize(file);
+			file.Close();
 		}
 		else {
 			skillSettingDic.Add("UI_skill_arrow01", "N/A");

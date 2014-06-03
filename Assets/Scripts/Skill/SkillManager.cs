@@ -31,21 +31,23 @@ public class SkillManager : MonoBehaviour {
 	void SetSkillInfoDatas()
 	{
 		var bf = new BinaryFormatter();
-		FileStream file = new FileStream(Application.persistentDataPath + "/SkillInfo.dat", FileMode.Create, FileAccess.Write); 
+		FileStream file = new FileStream(Application.persistentDataPath + "/SkillInfo.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None); 
 		SaveDatas();
 
 		bf.Serialize(file, saveList);
 		Debug.Log("saved");
+		file.Close();
 
 	}
 
 	void SetSkillSettingDatas()
 	{
 		var bf = new BinaryFormatter();
-		FileStream file = new FileStream(Application.persistentDataPath + "/SkillSetting.dat", FileMode.Create, FileAccess.Write); 
+		FileStream file = new FileStream(Application.persistentDataPath + "/SkillSetting.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None); 
 
 		bf.Serialize(file, skillSettingDic);
 		Debug.Log("saved Dic");
+		file.Close();
 
 	}
 
@@ -66,6 +68,7 @@ public class SkillManager : MonoBehaviour {
 			// saveList.Clear();
 			saveList = (List<SaveDataForSkill>)bf.Deserialize(file);
 			LoadDatas();
+			file.Close();
 		}
 		Debug.Log("skillInfo loaded");
 	}
@@ -78,6 +81,7 @@ public class SkillManager : MonoBehaviour {
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = new FileStream(path, FileMode.Open, FileAccess.Read);
 			skillSettingDic = (Dictionary<string,string>)bf.Deserialize(file);
+			file.Close();
 		}
 		else {
 			skillSettingDic.Add("UI_skill_arrow01", "N/A");

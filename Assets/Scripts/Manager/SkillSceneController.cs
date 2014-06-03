@@ -47,19 +47,24 @@ public class SkillSceneController : MonoBehaviour {
 
 		// Disable the prefab item
 		// don't want it visible when the game is running, as it is in the scene
-		// prefabItem.transform.parent = null;
-		// DoSetActive( prefabItem.transform, false );
+		prefabItem.transform.parent = null;
+		prefabItem.gameObject.SetActive(false);
+		// DoSetActive( prefabSkillSlot.transform, false );
+
+		prefabSkillSlot.transform.parent = null;
+		prefabSkillSlot.gameObject.SetActive(false);
+		// DoSetActive( prefabDraggedItem.transform, false );
+
 		// skillManager = transform.GetComponent<SkillManager>();
 
 		// How many items do we need to buffer?
 		itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
-		// maxVisibleItems = Mathf.CeilToInt(skillItemScrollableArea.VisibleAreaLength / itemStride) + 1;
-		// maxVisibleSlots = Mathf.CeilToInt(skillSlotScrollableArea.VisibleAreaLength / slotStride) + 1;
+		
 
 		SkillDataSingleton.Instance.Load();
 		Debug.Log("skill number: " + SkillDataSingleton.Instance.skillList.Count);
 		// Debug.Log("SkillManager Number: " + SkillDataSingleton.Instance.skillList.Count);
-		skillItemScrollableArea.ContentLength = SkillDataSingleton.Instance.swordSkills.Count * 1.3f * itemStride + .3f;
+		// skillItemScrollableArea.ContentLength = SkillDataSingleton.Instance.swordSkills.Count * 1.3f * itemStride + .3f;
 
 		Debug.Log("itemStride: " + prefabItem.GetMaxBounds() + ", area: " + prefabItem.GetMinBounds());
 		InitializeSkillSlotSetting();
@@ -111,6 +116,7 @@ public class SkillSceneController : MonoBehaviour {
 			// childLayout.gameObject.SetActive(true);
 
 			CSSkillItem getSkill = upItem.transform.parent.GetComponent<CSSkillItem>();
+			Debug.Log("get: " + getSkill.skillName);
 			getSlot.ChangeSkill(getSkill.skillName);
 			// getItem.EnableOnlyStateWithIndex(2);
 			// getItem.ChangeAllItemImage(getSkill.skillName);
@@ -122,6 +128,24 @@ public class SkillSceneController : MonoBehaviour {
 			Debug.Log("Nope!!");
 
 
+	}
+
+	void ShowSkillButtonClicked()
+	{
+		Transform showSkill = transform.parent.Find("ShowSkill");
+		showSkill.gameObject.SetActive(true);
+
+		Transform selectSkill = transform.parent.Find("SelectSkill");
+		selectSkill.gameObject.SetActive(false);
+	}
+
+	void SelectSkillButtonClicked()
+	{
+		Transform showSkill = transform.parent.Find("ShowSkill");
+		showSkill.gameObject.SetActive(false);
+
+		Transform selectSkill = transform.parent.Find("SelectSkill");
+		selectSkill.gameObject.SetActive(true);
 	}
 
 	void OnScroll(tk2dUIScrollableArea scrollableArea) {
@@ -209,6 +233,7 @@ public class SkillSceneController : MonoBehaviour {
 		float y = -.3f;
 		foreach (KeyValuePair<string,string> skillSlot in SkillDataSingleton.Instance.skillSettingDic) {
 			tk2dUILayout layout = Instantiate(prefabSkillSlot) as tk2dUILayout;
+			layout.gameObject.SetActive(true);
 			layout.transform.parent = skillSlotScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
 			y -= (float) (itemStride * 1.5);
@@ -225,10 +250,10 @@ public class SkillSceneController : MonoBehaviour {
 
 		foreach (string slotName in unregisteredSkillSlotNames) {
 			tk2dUILayout layout = Instantiate(prefabSkillSlot) as tk2dUILayout;
+			layout.gameObject.SetActive(true);
 			layout.transform.parent = skillSlotScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
 			y -= (float) (itemStride * 1.5);
-
 			// ChangeItemImage(layout.transform, slotName);
 
 			// Transform childLayout = layout.transform.Find("AddSkillButton");
@@ -251,14 +276,15 @@ public class SkillSceneController : MonoBehaviour {
 		float y = -.3f;
 		foreach (Skill oneSkill in SkillDataSingleton.Instance.swordSkills) {
 			Debug.Log("oneSkill");
-			Debug.Log("oneSkill name: " + oneSkill.skillName);
 			string itemName = "UI_skill_" + oneSkill.skillName;
 			tk2dUILayout layout = Instantiate(prefabItem) as tk2dUILayout;
+			layout.gameObject.SetActive(true);
 			layout.transform.parent = skillItemScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
 			y -= (float) (itemStride * 1.3);
 
 			CSSkillItem getSkill = layout.gameObject.GetComponent<CSSkillItem>();
+			Debug.Log("oneSkill name: " + itemName);
 			getSkill.ChangeSkill(itemName);
 			getSkill.CustomizeListObject(oneSkill);
 
