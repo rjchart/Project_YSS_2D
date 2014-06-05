@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using Skills;
 
 public class SkillDatabaseManager : EditorWindow {
 

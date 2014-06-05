@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Skills;
 
 public class CSSkillItem : MonoBehaviour {
 	public string skillName;

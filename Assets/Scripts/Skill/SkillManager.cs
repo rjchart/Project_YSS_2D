@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using Skills;
 
 [Serializable]
 public class SkillManager : MonoBehaviour {
@@ -14,11 +15,34 @@ public class SkillManager : MonoBehaviour {
 	public List<SaveDataForSkill> saveList = new List<SaveDataForSkill>();
 	[SerializeField]
 	public Dictionary<string,string> skillSettingDic = new Dictionary<string,string>();
+	public Dictionary<string,List<Skill>> skillListDic = new Dictionary<string,List<Skill>>();	
+	public Dictionary<string,bool> skillShowDic = new Dictionary<string,bool>();
 
 	public List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
 	public List<SwordSkill> swordSkills = new List<SwordSkill>();
 	public List<Skill> otherSkills = new List<Skill>();
 
+	public void Init()
+	{
+	 	if (skillShowDic.Count > 0)
+	 		return;
+
+	 	foreach (string type in Enum.GetNames(typeof(SkillTypeToCreate)))
+	 	{
+	 		List<Skill> tmpSkills = new List<Skill>();
+	 		skillListDic.Add(type, tmpSkills);
+	 		skillShowDic.Add(type, false);
+	 	}
+
+	 	Load();
+
+	}
+
+	void OnEnable()
+	{
+
+	 	Debug.Log("check!!");
+	}
 
 	public void Save() 
 	{

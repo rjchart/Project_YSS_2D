@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using Skills;
 
 [Serializable]
 public class SaveDataForSkill 
@@ -43,10 +44,7 @@ public class SkillDataSingleton : Singleton<SkillDataSingleton> {
 
 	public void Save() 
 	{
-
-		// SetSkillInfoDatas();
 		SetSkillSettingDatas();
-
 	}
 
 	void SetSkillInfoDatas()

@@ -2,6 +2,10 @@
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Reflection;
+using Skills;
+
 
 [CustomEditor(typeof(SkillManager))]
 internal class SkillManagerInspector : Editor {
@@ -12,11 +16,11 @@ internal class SkillManagerInspector : Editor {
 
 	public override void OnInspectorGUI()
 	{
+		SkillManager sm = target as SkillManager;
+		sm.Init();
 
-		 SkillManager sm = target as SkillManager;
-
-		 EditorGUILayout.BeginHorizontal();
-		 EditorGUILayout.LabelField("Skill Managment: " + sm.skillList.Count);
+		EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.LabelField("Skill Managment: " + sm.skillList.Count);
 
 		if (GUILayout.Button("removeAll"))
 		{
@@ -38,180 +42,96 @@ internal class SkillManagerInspector : Editor {
 		EditorGUILayout.EndHorizontal();
 
 		 // EditorGUILayout.LabelField("Number of Total Skills: " + sm.skillList.Count);
+		Dictionary<string,List<Skill>> skillListDic = new Dictionary<string,List<Skill>>();
+		List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
+		List<SwordSkill> swordSkills = new List<SwordSkill>();
+		List<Skill> otherSkills = new List<Skill>();
 
-		 List<DefaultSkill> defaultSkills = new List<DefaultSkill>();
-		 List<SwordSkill> swordSkills = new List<SwordSkill>();
-		 List<Skill> otherSkills = new List<Skill>();
-		 foreach (Skill oneSkill in sm.skillList)
-		 {
-		 	if (oneSkill.GetType() == typeof(DefaultSkill))
-		 	{
-		 		defaultSkills.Add((DefaultSkill)oneSkill);
-		 	}
+		 // SkillTypeToCreate.GetValues();
 
-		 	else if (oneSkill.GetType() == typeof(SwordSkill))
-		 	{
-		 		swordSkills.Add((SwordSkill)oneSkill);
-		 	}
+	 	foreach (string type in Enum.GetNames(typeof(SkillTypeToCreate)))
+	 	{
+	 		List<Skill> tmpSkills = new List<Skill>();
+	 		skillListDic.Add(type, tmpSkills);
+	 	}
 
-		 	else
+		foreach (Skill oneSkill in sm.skillList)
+		{
+		 	foreach (string type in Enum.GetNames(typeof(SkillTypeToCreate)))
 		 	{
-		 		otherSkills.Add(oneSkill);
+		 		// Type tmpType = Type.GetType("System.MonoType." + type, true);
+		 		if (oneSkill.GetType().ToString() == "Skills." + type) {
+		 			skillListDic[type].Add(oneSkill);
+		 		}
 		 	}
-		 }
+		}
+		 
+
+
 
 		 // EditorGUILayout.LabelField("Total DefaultSkills: " + defaultSkills.Count.ToString());
 		 // EditorGUILayout.LabelField("Total Skills: " + sm.skillList.Count.ToString());
 
 		// sm.ReorderSkills();
 
-		EditorGUILayout.BeginHorizontal();
-		showingDefaultSkills = EditorGUILayout.Foldout(showingDefaultSkills, "DefaultSkills: " + defaultSkills.Count);
-		if (GUILayout.Button("Add"))
-		{
-			DefaultSkill newDefaultSkill = new DefaultSkill();
-			newDefaultSkill.skillName = "new defaultSkill";
-			newDefaultSkill.description = "";
-			newDefaultSkill.cost = 0;
-			newDefaultSkill.type = 0;
-			// EditorUtility.SetDirty(newDefaultSkill);
-			// DontDestroyOnLoad(newDefaultSkill);
-			sm.skillList.Add(newDefaultSkill);
-			sm.ReorderSkills();
-		}
-		 EditorGUILayout.EndHorizontal();
-		 if (showingDefaultSkills) {
-		 	EditorGUI.indentLevel = 1;
-			foreach (DefaultSkill defaultSkill in defaultSkills)
+ 		Assembly asm = typeof(Skill).Assembly;
+		// Type type = asm.GetType(namespaceQualifiedTypeName);
+	 	foreach (string type in Enum.GetNames(typeof(SkillTypeToCreate)))
+	 	{
+	 		Type tmpType = asm.GetType("Skills." + type, true);
+	 		// Debug.Log("Success: " + tmpType);
+
+			EditorGUILayout.BeginHorizontal();
+			sm.skillShowDic[type] = EditorGUILayout.Foldout(sm.skillShowDic[type], type + ": " + skillListDic[type].Count);
+			if (GUILayout.Button("Add"))
 			{
-				EditorGUILayout.BeginHorizontal();
-
-				defaultSkill.showing = EditorGUILayout.Foldout(defaultSkill.showing, defaultSkill.skillName);
-				if (GUILayout.Button("-"))
-				{
-					sm.skillList.Remove(defaultSkill);
-					sm.ReorderSkills();
-				}
-
-				EditorGUILayout.EndHorizontal();
-
-
-				if (defaultSkill.showing) {
-					EditorGUI.indentLevel += 1;
-					defaultSkill.skillName = EditorGUILayout.TextField("Name: ", defaultSkill.skillName);
-					defaultSkill.description = EditorGUILayout.TextField("Description: ", defaultSkill.description);
-					defaultSkill.cost = EditorGUILayout.IntField("Cost: ", defaultSkill.cost);
-					defaultSkill.gi = EditorGUILayout.IntField("Gi: ", defaultSkill.gi);
-					defaultSkill.sal = EditorGUILayout.IntField("Sal: ", defaultSkill.sal);
-					EditorGUI.indentLevel -= 1;
-					EditorGUILayout.Space();	
-
-				}
-
+				Skill newSkill = (Skill)Activator.CreateInstance(tmpType);
+				newSkill.skillName = "new " + type;
+				newSkill.description = "";
+				newSkill.cost = 0;
+				newSkill.type = 0;
+				// EditorUtility.SetDirty(newSkill);
+				// DontDestroyOnLoad(newSkill);
+				sm.skillList.Add(newSkill);	
+				sm.ReorderSkills();
 			}
+			EditorGUILayout.EndHorizontal();
 
-
-		 	EditorGUI.indentLevel = 0;
-		 }
-
-		 EditorGUILayout.BeginHorizontal();
-		showingSwordSkills = EditorGUILayout.Foldout(showingSwordSkills, "SwordSkills:" + swordSkills.Count);
-		if (GUILayout.Button("Add"))
-		{
-			SwordSkill newSwordSkill = new SwordSkill();
-			newSwordSkill.skillName = "new SwordSkill";
-			newSwordSkill.description = "";
-			newSwordSkill.cost = 0;
-			newSwordSkill.type = 1;
-			// EditorUtility.SetDirty(newSwordSkill);
-			sm.skillList.Add(newSwordSkill);
-			sm.ReorderSkills();
-		}
-		 EditorGUILayout.EndHorizontal();
-
-		if (showingSwordSkills) {
-			EditorGUI.indentLevel = 1;
-			foreach (SwordSkill swordSkill in swordSkills)
-			{
-				EditorGUILayout.BeginHorizontal();
-
-				swordSkill.showing = EditorGUILayout.Foldout(swordSkill.showing, swordSkill.skillName);
-				if (GUILayout.Button("-"))
+			 if (sm.skillShowDic[type]) {
+			 	EditorGUI.indentLevel = 1;
+				foreach (Skill skill in skillListDic[type])
 				{
-					sm.skillList.Remove(swordSkill);
-					sm.ReorderSkills();
-				}
+					EditorGUILayout.BeginHorizontal();
 
-				EditorGUILayout.EndHorizontal();
+					skill.showing = EditorGUILayout.Foldout(skill.showing, skill.skillName);
+					if (GUILayout.Button("-"))
+					{
+						sm.skillList.Remove(skill);
+						sm.ReorderSkills();
+					}
 
-
-				if (swordSkill.showing) {
-					EditorGUI.indentLevel += 1;
-					swordSkill.skillName = EditorGUILayout.TextField("Name: ", swordSkill.skillName);
-					swordSkill.description = EditorGUILayout.TextField("Description: ", swordSkill.description);
-					swordSkill.cost = EditorGUILayout.IntField("Cost: ", swordSkill.cost);
-					swordSkill.gi = EditorGUILayout.IntField("Gi: ", swordSkill.gi);
-					swordSkill.sal = EditorGUILayout.IntField("Sal: ", swordSkill.sal);
-					EditorGUI.indentLevel -= 1;
-					EditorGUILayout.Space();	
-
-				}
-			}
+					EditorGUILayout.EndHorizontal();
 
 
-			EditorGUI.indentLevel = 0;
-		}
+					if (skill.showing) {
+						EditorGUI.indentLevel += 1;
+						skill.skillName = EditorGUILayout.TextField("Name: ", skill.skillName);
+						skill.description = EditorGUILayout.TextField("Description: ", skill.description);
+						skill.cost = EditorGUILayout.IntField("Cost: ", skill.cost);
+						skill.gi = EditorGUILayout.IntField("Gi: ", skill.gi);
+						skill.sal = EditorGUILayout.IntField("Sal: ", skill.sal);
+						EditorGUI.indentLevel -= 1;
+						EditorGUILayout.Space();	
 
-
-		 EditorGUILayout.BeginHorizontal();
-		showingOtherSkills = EditorGUILayout.Foldout(showingOtherSkills, "OtherSkills: " + otherSkills.Count);
-		if (GUILayout.Button("Add"))
-		{
-			Skill newOtherSkill = new Skill();
-			newOtherSkill.skillName = "new otherSkill";
-			newOtherSkill.description = "";
-			newOtherSkill.cost = 0;
-			// EditorUtility.SetDirty(newOtherSkill);
-			sm.skillList.Add(newOtherSkill);
-			sm.ReorderSkills();
-		}
-		 EditorGUILayout.EndHorizontal();
-
-		 if (showingOtherSkills) {
-		 	EditorGUI.indentLevel = 1;
-			foreach (Skill otherSkill in otherSkills)
-			{
-				EditorGUILayout.BeginHorizontal();
-
-				otherSkill.showing = EditorGUILayout.Foldout(otherSkill.showing, otherSkill.skillName);
-				if (GUILayout.Button("-"))
-				{
-					sm.skillList.Remove(otherSkill);
-					// Skill.DestroyImmediate(otherSkill);
-					sm.ReorderSkills();
-				}
-
-				EditorGUILayout.EndHorizontal();
-
-
-				if (otherSkill.showing) {
-					EditorGUI.indentLevel += 1;
-					otherSkill.skillName = EditorGUILayout.TextField("Name: ", otherSkill.skillName);
-					otherSkill.description = EditorGUILayout.TextField("Description: ", otherSkill.description);
-					otherSkill.cost = EditorGUILayout.IntField("Cost: ", otherSkill.cost);
-					otherSkill.gi = EditorGUILayout.IntField("Gi: ", otherSkill.gi);
-					otherSkill.sal = EditorGUILayout.IntField("Sal: ", otherSkill.sal);
-					otherSkill.type = 2;
-					EditorGUI.indentLevel -= 1;
-					EditorGUILayout.Space();	
+					}
 
 				}
 
-			}
 
+			 	EditorGUI.indentLevel = 0;
+			 }	
+	 	}
 
-		 	EditorGUI.indentLevel = 0;
-		 }
 
 	}
 }

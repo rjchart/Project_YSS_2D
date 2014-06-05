@@ -1,21 +1,20 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Skills;
 
 public class SkillSceneController : MonoBehaviour {
 
 	public tk2dUILayout prefabItem;
 	public tk2dUILayout prefabSkillSlot;
-	public tk2dUILayout prefabDraggedItem;
+	public tk2dUILayout prefabShowSkill;
 
 	// private SkillManager skillManager;
-
-	float itemStride = 0;
-	float slotStride = 0;
 
 	// Manually set up a scrollable area by working out offsets manually
 	public tk2dUIScrollableArea skillItemScrollableArea;
 	public tk2dUIScrollableArea skillSlotScrollableArea;
+	public tk2dUIScrollableArea showSkillItemScrollableArea;
 	
 	public List<string> currentSkillItemSlots;
 	public List<string> currentSkillMatchs;
@@ -53,13 +52,16 @@ public class SkillSceneController : MonoBehaviour {
 
 		prefabSkillSlot.transform.parent = null;
 		prefabSkillSlot.gameObject.SetActive(false);
+
+		prefabShowSkill.transform.parent = null;
+		prefabShowSkill.gameObject.SetActive(false);
 		// DoSetActive( prefabDraggedItem.transform, false );
 
 		// skillManager = transform.GetComponent<SkillManager>();
 
 		// How many items do we need to buffer?
-		itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
-		
+		// itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
+
 
 		SkillDataSingleton.Instance.Load();
 		Debug.Log("skill number: " + SkillDataSingleton.Instance.skillList.Count);
@@ -69,7 +71,7 @@ public class SkillSceneController : MonoBehaviour {
 		Debug.Log("itemStride: " + prefabItem.GetMaxBounds() + ", area: " + prefabItem.GetMinBounds());
 		InitializeSkillSlotSetting();
 		InitializeSkillItemSetting();
-	
+		InitializeShowSkillItemSetting();
 	}
 	
 	// Update is called once per frame
@@ -137,6 +139,8 @@ public class SkillSceneController : MonoBehaviour {
 
 		Transform selectSkill = transform.parent.Find("SelectSkill");
 		selectSkill.gameObject.SetActive(false);
+
+		InitializeShowSkillItemSetting();
 	}
 
 	void SelectSkillButtonClicked()
@@ -146,61 +150,15 @@ public class SkillSceneController : MonoBehaviour {
 
 		Transform selectSkill = transform.parent.Find("SelectSkill");
 		selectSkill.gameObject.SetActive(true);
+
+		InitializeSkillSlotSetting();
+		InitializeSkillItemSetting();
 	}
 
 	void OnScroll(tk2dUIScrollableArea scrollableArea) {
 		// UpdateListGraphics();
 	}
 
-	// Vector3 ScreenToWorld( Vector2 screenPos ) {
-	//     // Create a ray going into the scene starting 
-	//     // from the screen position provided 
-	//     Ray ray = Camera.main.ScreenPointToRay( screenPos );
-	//     RaycastHit hit;
-
-	//     // ray hit an object, return intersection point
-	//     if( Physics.Raycast( ray, out hit ) )
-	//        return hit.point;
-
-	//     // ray didn't hit any solid object, so return the 
-	//     // intersection point between the ray and 
-	//     // the Y=0 plane (horizontal plane)
-	//     float t = -ray.origin.y / ray.direction.y;
-	//     return ray.GetPoint( t );
-	// }
-
-	// void ChangeItemImage(tk2dUILayout layout, string name) {
-
-	// 	Component[] values = layout.GetComponentsInChildren(typeof(tk2dSprite));
-	// 	for (int i = 0; i < values.Length; i++) {
-	// 		tk2dSprite child = values[i] as tk2dSprite;
-	// 		child.SetSprite(name);
-	// 	}
-	// }
-
-	// void ChangeItemImage(Transform layout, string name) {
-
-	// 	Component[] values = layout.GetComponentsInChildren(typeof(tk2dSprite));
-	// 	for (int i = 0; i < values.Length; i++) {
-	// 		tk2dSprite child = values[i] as tk2dSprite;
-	// 		child.SetSprite(name);
-	// 	}
-
-	// 	CSSkillItem getSkill = layout.gameObject.GetComponent<CSSkillItem>();
-	// 	getSkill.skillName = name;
-
-	// }
-
-	// bool IsMouseInItemBox(tk2dUILayout layout) {
-	// 	Vector3 getPos = ScreenToWorld(Input.mousePosition);
-	// 	if (getPos.x > layout.transform.position.x && getPos.x < layout.transform.position.x + layout.transform.lossyScale.x) {
-	// 		if (getPos.y < layout.transform.position.y && getPos.y > layout.transform.position.y - layout.transform.lossyScale.y) {
-	// 			Debug.Log("compare: " + getPos.y + ", next: " + layout.transform.position.y + ", box: " + layout.transform.lossyScale.y);
-	// 			return true;
-	// 		}
-	// 	}
-	// 	return false;
-	// }
 
 	void SkillSlotClicked(tk2dUIItem item) {
 		CSSkillSlot getSlot = item.transform.parent.gameObject.GetComponent<CSSkillSlot>();
@@ -213,7 +171,7 @@ public class SkillSceneController : MonoBehaviour {
 	}
 
 	void InitializeSkillSlotSetting() {
-		slotStride = (prefabSkillSlot.GetMaxBounds() - prefabSkillSlot.GetMinBounds()).y;
+		float slotStride = (prefabSkillSlot.GetMaxBounds() - prefabSkillSlot.GetMinBounds()).y;
 		skillSlotScrollableArea.ContentLength = skillSlotNames.Count * 1.3f * slotStride + .3f;
 
 		// int maxSlotNumber = skillSlotNames.Count;
@@ -229,6 +187,9 @@ public class SkillSceneController : MonoBehaviour {
 
 		Debug.Log("List unregisteredSkillSlotNames: " + unregisteredSkillSlotNames.Count);
 
+		// unusedContentSlots.Clear();
+		// DestroyAllChild(skillSlotScrollableArea.contentContainer.transform);
+
 		// Buffer the prefabs that we will need	
 		float y = -.3f;
 		foreach (KeyValuePair<string,string> skillSlot in SkillDataSingleton.Instance.skillSettingDic) {
@@ -236,7 +197,7 @@ public class SkillSceneController : MonoBehaviour {
 			layout.gameObject.SetActive(true);
 			layout.transform.parent = skillSlotScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
-			y -= (float) (itemStride * 1.5);
+			y -= (float) (slotStride * 1.5);
 
 			// ChangeItemImage(layout.transform, slotName);
 
@@ -253,7 +214,7 @@ public class SkillSceneController : MonoBehaviour {
 			layout.gameObject.SetActive(true);
 			layout.transform.parent = skillSlotScrollableArea.contentContainer.transform;
 			layout.transform.localPosition = new Vector3(0, y, 0);
-			y -= (float) (itemStride * 1.5);
+			y -= (float) (slotStride * 1.5);
 			// ChangeItemImage(layout.transform, slotName);
 
 			// Transform childLayout = layout.transform.Find("AddSkillButton");
@@ -269,9 +230,11 @@ public class SkillSceneController : MonoBehaviour {
 	}
 
 	void InitializeSkillItemSetting() {
-		itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
+		float itemStride = (prefabItem.GetMaxBounds() - prefabItem.GetMinBounds()).y;
 		skillItemScrollableArea.ContentLength = SkillDataSingleton.Instance.swordSkills.Count * 1.3f * itemStride + .3f;
 
+		unusedContentItems.Clear();
+		DestroyAllChild(skillItemScrollableArea.contentContainer.transform);
 		// Buffer the prefabs that we will need	
 		float y = -.3f;
 		foreach (Skill oneSkill in SkillDataSingleton.Instance.swordSkills) {
@@ -295,6 +258,42 @@ public class SkillSceneController : MonoBehaviour {
 		}	
 	}
 
-	void SaveCurrentState() {
+	void InitializeShowSkillItemSetting() {
+		float showSkillStride = (prefabShowSkill.GetMaxBounds() - prefabShowSkill.GetMinBounds()).y;
+		showSkillItemScrollableArea.ContentLength = SkillDataSingleton.Instance.swordSkills.Count * 1.3f * showSkillStride + .3f;
+
+		unusedContentItems.Clear();
+		DestroyAllChild(showSkillItemScrollableArea.contentContainer.transform);
+
+		// Buffer the prefabs that we will need	
+		float y = -.3f;
+		foreach (Skill oneSkill in SkillDataSingleton.Instance.swordSkills) {
+			Debug.Log("oneSkill");
+			string itemName = "UI_skill_" + oneSkill.skillName;
+			tk2dUILayout layout = Instantiate(prefabShowSkill) as tk2dUILayout;
+			layout.gameObject.SetActive(true);
+			layout.transform.parent = showSkillItemScrollableArea.contentContainer.transform;
+			layout.transform.localPosition = new Vector3(0, y, 0);
+			y -= (float) (showSkillStride * 1.3);
+
+			CSSkillItem getSkill = layout.gameObject.GetComponent<CSSkillItem>();
+			Debug.Log("oneSkill name: " + itemName);
+			getSkill.ChangeSkill(itemName);
+			getSkill.CustomizeListObject(oneSkill);
+
+			// CustomizeListObject(layout.transform, oneSkill);
+			// ChangeItemImage(layout.transform, itemName);
+
+			unusedContentItems.Add( getSkill );
+		}	
+
+	}
+
+	void DestroyAllChild(Transform oneTransform)
+	{
+		foreach (Transform child in oneTransform)
+		{
+			GameObject.Destroy(child.gameObject);
+		}
 	}
 }

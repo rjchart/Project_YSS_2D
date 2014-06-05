@@ -276,6 +276,7 @@
      <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
      <Compile Include="Assets\Resources\UI_start\CSStartScene.cs" />
+     <Compile Include="Assets\Scripts\BackgroundSceneController.cs" />
      <Compile Include="Assets\Scripts\CSAttackObject.cs" />
      <Compile Include="Assets\Scripts\CSInputCheck.cs" />
      <Compile Include="Assets\Scripts\CSUnit.cs" />
@@ -290,8 +291,6 @@
      <Compile Include="Assets\Scripts\Manager\SkillSceneController.cs" />
      <Compile Include="Assets\Scripts\Skill\Skill.cs" />
      <Compile Include="Assets\Scripts\Skill\SkillManager.cs" />
-     <Compile Include="Assets\Scripts\Skill\Skill_Default.cs" />
-     <Compile Include="Assets\Scripts\Skill\Skill_Sword.cs" />
      <Compile Include="Assets\Scripts\SkillSlots\CSSkillItem.cs" />
      <Compile Include="Assets\Scripts\SkillSlots\CSSkillSlot.cs" />
      <Compile Include="Assets\SingletonPerfect\Singleton.cs" />
